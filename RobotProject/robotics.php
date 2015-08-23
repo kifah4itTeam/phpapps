@@ -111,8 +111,8 @@ $row;
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="robotics.php">الصفحة الرئيسية</a></li>
-        <li><a href="posts.php">المقالات</a></li>
-        <li><a href="workshop.php">الورشات</a></li>
+        <li><a href="posts.php">1المقالات</a></li>
+        <li><a href="workshop.php">12312الورشات</a></li>
         <li><a href="#">المشاريع</a></li></ul>
 
       <form class="navbar-form navbar-left" role="search">
