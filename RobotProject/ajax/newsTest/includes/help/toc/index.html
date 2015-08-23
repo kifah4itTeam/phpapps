@@ -1,0 +1,129 @@
+<? @include($_SERVER['DOCUMENT_ROOT']."/config/log_visitors.inc"); ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>TOC maker - DHTMLgoodies.com</title>
+<? @include($_SERVER['DOCUMENT_ROOT']."/config/metatags.inc"); ?>	
+<link rel="stylesheet" href="css/dhtmlgoodies_tree.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/slide_menu.css" type="text/css" media="screen">
+<style type="text/css">
+body{
+	font-family: Calibri, Lucida Sans Unicode, Arial, sans-serif;	/* Font to use */	
+	margin:0px;
+}
+#toc_pane{	/* TABLE OF CONTENTS AT THE LEFT SIDE */
+	width:200px;
+	float:left;
+	padding-left:10px;
+	padding-top:10px;
+	overflow:hidden;
+}
+#content_container{	/* YOUR HTML CONTENT */
+	width:560px;
+	float:left;	
+	font-size:0.9em;
+}
+/* General CSS for <p> and <h1>..<h6> tags */
+#content_container p{
+	margin-top:0px;
+}
+#content_container h1,#content_container h2,#content_container h3,#content_container h4{
+	margin-bottom:0px;
+}
+.pageLinks{	/* Box for previous and next link at the bottom of the page */
+	border:1px solid #555;
+	background-color:#EEE;
+	padding:2px;
+	height:20px;
+	vertical-align:middle;
+	margin-bottom:10px;
+}
+.pageLinks a{	/* Previous and next link at the bottom of the page */
+	line-height:25px;
+	font-size:0.9em;
+	font-weight:bold;
+	text-decoration:none;
+}
+.pageLinks a:hover{	/* Rollover effect - next and previous link at the bottom of the page */
+	color:red;
+}
+</style>
+<script type="text/javascript" src="js/dhtmlgoodies_tree.js"></script>
+<script type="text/javascript" src="js/slidemenu.js"></script>
+<script type="text/javascript">
+var insertNumbers = true;	// Insert numbers in front of headings
+var insertNumbers_as = [1,1,1,2,2,2]; 	// 1 = 0-9, 2 = A-Z, 3 = a-z, 4 = Roman(I,II,III,IV) - Array, first element = top node, second = sub of top node etc.
+var previous_txt = 'Previous page';	// Previous link at the bottom
+var next_txt = 'Next page';	// Next link at the bottom
+var includeNextPreviousLink = true; 	// Include "Next page" and "Previous page" links at the bottom
+
+var treeDepth = 4;	// Make depth of headings [H1-n], example: 4 will create headings of <h1>,<h2>,<h3> and <h4>
+var tocStyle = 1;	// 1 = tree view, 2 = slide menu, 0 = nothing(i.e. create something your self)
+var treeExpandAll = False; 	// If tree view->Expand all nodes initially ?
+var cssActiveLink = 'font-weight:bold;';	// CSS active toc links
+
+</script>
+<script type="text/javascript" src="js/toc_maker.js"></script>
+<script type="text/javascript">
+window.onload = initTocMaker;
+</script>
+</head>
+<body>
+
+<div id="header">
+	<img src="http://www.dhtmlgoodies.com/images/heading3.gif">
+</div>
+<div id="toc_pane">
+	<div id="toc_pane_inner"><!-- Empty DIV - will be filled dynamically --></div> 
+</div>
+<div id="content_container">
+<!-- START WHERE YOU PUT YOUR CONTENT -->
+<div class="content_page">
+<h1>Menu Module</h1>
+<p>menu module general description...</P>
+<h2>Enter New Item</h2>
+<p>enter enter enter enter enter enter enter enter enter enter enter enter enter enter enter enter enter enter </P>
+<h3>Delete an old Item</h3>
+<h3>Stavanger</h3>
+<p>Splendida porro oculi fugitant vitantque tueri. sol etiam caecat, contra si tendere pergas,propterea quia vis</p>
+<h3>Haugesund</h3>
+<h2>Switzeland</h2>
+<p>Corpore eorumsemina multa fluunt simulacris obvia rerum, multaque sunt oculis in eorum denique mixta,quae contage sua palloribus omnia pingunt.</P>
+<h2>United Kingdom</h2>
+<p>Multaque sunt oculis in eorum denique mixta,quae contage sua palloribus omnia pingunt.</P>
+<h3>London</h3>
+<h3>Manchester</h3>
+</div>
+<div class="content_page">
+<h1>Asia</h1>
+<h2>Japan</h2>
+<p>Splendida porro oculi fugitant vitantque tueri. sol etiam caecat, contra si tendere pergas,propterea quia vis magnast ipsius et alteaëra per purum simulacra ferunturet feriunt oculos turbantia composituras. Praeterea splendor qui cumque est acer adurit saepe oculos ideo quod semina possidet ignismulta, dolorem oculis quae gignunt insinuando.lurida praeterea fiunt quae cumque tuenturarquati, quia luroris de corpore eorumsemina multa fluunt simulacris obvia rerum, multaque sunt oculis in eorum denique mixta,quae contage sua palloribus omnia pingunt.</P>
+<h2>China</h2>
+<p>Splendida porro oculi fugitant vitantque tueri. sol etiam caecat, contra si tendere pergas,propterea quia vis magnast ipsius et alteaëra per purum simulacra ferunturet feriunt oculos turbantia composituras. Praeterea splendor qui cumque est acer adurit saepe oculos ideo quod semina possidet ignismulta, dolorem oculis quae gignunt insinuando.lurida praeterea fiunt quae cumque tuenturarquati, quia luroris de corpore eorumsemina multa fluunt simulacris obvia rerum.</P>
+<h2>South Korea</h2>
+<p>Splendida porro oculi fugitant vitantque tueri. sol etiam caecat, contra si tendere pergas,propterea quia vis magnast ipsius et alteaëra per purum simulacra ferunturet feriunt oculos turbantia composituras. Praeterea splendor qui cumque est acer adurit saepe oculos ideo quod semina possidet ignismulta, dolorem oculis quae gignunt insinuando.lurida praeterea fiunt quae cumque tuenturarquati, quia luroris de corpore eorumsemina multa fluunt simulacris obvia rerum.</P>
+</div>
+<div class="content_page">
+<h1>America</h1>
+<h2>United States</h2>
+<p>Splendida porro oculi fugitant vitantque tueri. sol etiam caecat, contra si tendere pergas,propterea quia vis magnast ipsius et alteaëra per purum simulacra ferunturet feriunt oculos turbantia composituras. Praeterea splendor qui cumque est acer adurit saepe oculos ideo quod semina possidet ignismulta, dolorem oculis quae gignunt insinuando.lurida praeterea fiunt quae cumque tuenturarquati, quia luroris de corpore eorumsemina multa fluunt simulacris obvia rerum, multaque sunt oculis in eorum denique mixta,quae contage sua palloribus omnia pingunt.</P>
+<h2>Mexico</h2>
+<p>Splendida porro oculi fugitant vitantque tueri. sol etiam caecat, contra si tendere pergas,propterea quia vis magnast ipsius et alteaëra per purum simulacra ferunturet feriunt oculos turbantia composituras. Praeterea splendor qui cumque est acer adurit saepe oculos ideo quod semina possidet ignismulta, dolorem oculis quae gignunt insinuando.lurida praeterea fiunt quae cumque tuenturarquati, quia luroris de corpore eorumsemina multa fluunt simulacris obvia rerum, multaque sunt oculis in eorum denique mixta,quae contage sua palloribus omnia pingunt.</P>
+<h2>Canada</h2>
+<p>Splendida porro oculi fugitant vitantque tueri. sol etiam caecat, contra si tendere pergas,propterea quia vis magnast ipsius et alteaëra per purum simulacra ferunturet feriunt oculos turbantia composituras. Praeterea splendor qui cumque est acer adurit saepe oculos ideo quod semina possidet ignismulta, dolorem oculis quae gignunt insinuando.lurida praeterea fiunt quae cumque tuenturarquati, quia luroris de corpore eorumsemina multa fluunt simulacris obvia rerum, multaque sunt oculis in eorum denique mixta,quae contage sua palloribus omnia pingunt.</P>
+</div>
+<div class="content_page">
+<h1>Africa</h1>
+<h2>Kenya</h2>
+<p>Praeterea splendor qui cumque est acer adurit saepe oculos ideo quod semina possidet ignismulta, dolorem oculis quae gignunt insinuando.lurida praeterea fiunt quae cumque tuenturarquati, quia luroris de corpore eorumsemina multa fluunt simulacris obvia rerum, multaque sunt oculis in eorum denique mixta,quae contage sua palloribus omnia pingunt.</P>
+<h2>Etiopia</h2>
+<p>Sol etiam caecat, contra si tendere pergas,propterea quia vis magnast ipsius et alteaëra per purum simulacra ferunturet feriunt oculos turbantia composituras. Praeterea splendor qui cumque est acer adurit saepe oculos ideo quod semina possidet ignismulta, dolorem oculis quae gignunt insinuando.lurida praeterea fiunt quae cumque tuenturarquati, quia luroris de corpore eorumsemina multa fluunt simulacris obvia rerum, multaque sunt oculis in eorum denique mixta,quae contage sua palloribus omnia pingunt.</P>
+<h2>Tanzania</h2>
+<p>Et alteaëra per purum simulacra ferunturet feriunt oculos turbantia composituras. Praeterea splendor qui cumque est acer adurit saepe oculos ideo quod semina possidet ignismulta, dolorem oculis quae gignunt insinuando.lurida praeterea fiunt quae cumque tuenturarquati, quia luroris de corpore eorumsemina multa fluunt simulacris obvia rerum, multaque sunt oculis in eorum denique mixta,quae contage sua palloribus omnia pingunt.</P>
+<h2>Nigeria</h2>
+<p>Splendida porro oculi fugitant vitantque tueri. sol etiam caecat.</P>
+</div>
+<!-- END CONTENT -->
+</div>
+</body>
+</html>

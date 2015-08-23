@@ -1,0 +1,54 @@
+/* CSS Document */
+.help_group{
+	margin:5px;
+	font-size:14px;
+	font-weight:bold;
+	border-bottom:1px #ddd solid;
+	height:30px;
+	line-height:30px;
+	cursor:pointer;	
+}
+.help_group span{
+	height:30px;
+	line-height:30px;
+	font-size:22px;
+	margin-right:5px;	
+}
+.help_module{
+	margin-left:20px;
+	font-size:14px;
+	height:25px;
+	line-height:25px;
+	cursor:pointer;	
+	border-bottom:1px #ddd solid;
+}
+.help_module span{
+	height:25px;
+	line-height:25px;
+	font-size:18px;
+	margin-right:5px;	
+}
+.help_file{
+	margin-left:40px;
+	font-size:12px;
+	height:25px;
+	line-height:25px;
+	border-bottom:1px #ddd solid;
+}
+.help_link{
+	color:#666;
+	display:block;
+	text-align:left;
+}
+.help_act_link ,.help_link:hover{
+	color:#fff;
+	display:block;
+	text-align:left;
+	background-color:#c5161d;
+	text-indent:10px;
+}
+
+
+.modules_cont ,.files_cont{
+	display:none;
+}
